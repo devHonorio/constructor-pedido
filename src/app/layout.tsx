@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
+import { Sheader } from '@/components/@component-styled/header'
+import { Sbody } from '@/components/@component-styled/layout'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={poppins.className}>{children}</body>
+      <Sbody className={poppins.className}>
+        <Sheader>Pedidos</Sheader>
+        {children}
+      </Sbody>
     </html>
   )
 }
